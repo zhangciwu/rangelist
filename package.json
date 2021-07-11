@@ -1,0 +1,25 @@
+{
+  "name": "rangelist",
+  "version": "1.0.0",
+  "description": "## how to run the program ``` ### prerequisite: node ### node rangelist.js ``` ## solution & chart **add()** has 3 cases/phases 1. non overlapping, item array on left of the range array     - push item to result 2. overlapping      - update range array in place 3. non overlapping, item array on right of the range array      - break the while loop  - push range array to result - push the rest item array to result",
+  "main": "rangelist.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/echooocc/rangelist.git"
+  },
+  "author": "echooo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/echooocc/rangelist/issues"
+  },
+  "homepage": "https://github.com/echooocc/rangelist#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}

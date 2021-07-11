@@ -2,8 +2,22 @@
 
 ## how to run the program
 ```
-### prerequisite: node
-### node rangelist.js
+### prerequisite: node & npm install
+### npm run test
+
+expect result should be:
+
+ PASS  test/rangelist.test.js
+  ✓ range list add function (1 ms)
+  ✓ range list remove function
+  ✓ range list add & remove function
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        0.134 s, estimated 1 s
+Ran all test suites.
+
 ```
 ## solution & chart
 **add()** has 3 cases/phases
