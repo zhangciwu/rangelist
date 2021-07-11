@@ -8,7 +8,7 @@ class RangeList {
    * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
    */
     add(range) {
-        if(range.length == 0){
+        if(range.length < 2){
             return this.current;
         }
 
@@ -63,7 +63,7 @@ class RangeList {
    * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
    */
     remove(range) {
-        if(range.length == 0){
+        if(range.length < 2){
             return this.current;
         }
 
