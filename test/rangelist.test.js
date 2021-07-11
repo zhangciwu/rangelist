@@ -1,5 +1,6 @@
 const RangeList = require('rangelist');
 
+const errorString = 'input should follow a range format [10, 20]'
 test('range list add function', () => {
     const rl = new RangeList();
     rl.add([1, 5]);
@@ -22,6 +23,14 @@ test('range list add function', () => {
 
     rl.add([3, 8]);
     expect(rl.print()).toBe('[1, 8) [10, 21)');
+
+    expect(() => {
+        rl.add([22, 4]);
+    }).toThrow(errorString);
+
+    expect(() => {
+        rl.add([22]);
+    }).toThrow(errorString);
 });
 
 
@@ -48,6 +57,14 @@ test('range list remove function', () => {
 
     rl.remove([20,21]);
     expect(rl.print()).toBe('');
+
+    expect(() => {
+        rl.remove([22, 4]);
+    }).toThrow(errorString);
+
+    expect(() => {
+        rl.remove([22]);
+    }).toThrow(errorString);
 });
 
 

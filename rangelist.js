@@ -8,8 +8,12 @@ class RangeList {
    * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
    */
     add(range) {
-        if(range.length < 2){
+        if(range.length == 0){
             return this.current;
+        }
+
+        if(range.length < 2 || range[0] > range[1]) {
+            throw new Error('input should follow a range format [10, 20]');
         }
 
         let result = [];
@@ -63,8 +67,12 @@ class RangeList {
    * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
    */
     remove(range) {
-        if(range.length < 2){
+        if(range.length == 0){
             return this.current;
+        }
+
+        if(range.length < 2 || range[0] > range[1]) {
+            throw new Error("input should follow a range format [10, 20]");
         }
 
         let result = [];
