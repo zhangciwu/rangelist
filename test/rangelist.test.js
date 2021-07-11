@@ -14,6 +14,12 @@ test('range list add function', () => {
     rl.add([20, 21]);
     expect(rl.print()).toBe('[1, 5) [10, 21)');
 
+    rl.add([2, 4]);
+    expect(rl.print()).toBe('[1, 5) [10, 21)');
+
+    rl.add([]);
+    expect(rl.print()).toBe('[1, 5) [10, 21)');
+
     rl.add([3, 8]);
     expect(rl.print()).toBe('[1, 8) [10, 21)');
 });
@@ -36,6 +42,12 @@ test('range list remove function', () => {
 
     rl.remove([-30, 20]);
     expect(rl.print()).toBe('[20, 21)');
+
+    rl.remove([]);
+    expect(rl.print()).toBe('[20, 21)');
+
+    rl.remove([20,21]);
+    expect(rl.print()).toBe('');
 });
 
 

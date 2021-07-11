@@ -8,6 +8,10 @@ class RangeList {
    * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
    */
     add(range) {
+        if(range.length == 0){
+            return this.current;
+        }
+
         let result = [];
         let i = 0;
         const rangeL = range[0];
@@ -59,6 +63,10 @@ class RangeList {
    * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
    */
     remove(range) {
+        if(range.length == 0){
+            return this.current;
+        }
+
         let result = [];
         let i = 0;
         const rangeL = range[0];
