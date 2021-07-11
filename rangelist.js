@@ -49,6 +49,7 @@ class RangeList {
             result.push(this.current[i]);
             i++;
         }
+
         this.current = [...result];
         return result;
     }
@@ -117,7 +118,11 @@ class RangeList {
    * Prints out the list of ranges in the range list
    */
     print() {
-        console.log(this.current);
+        const result = this.current.reduceRight((accumulator, item) => {
+            accumulator = `[${item[0]}, ${item[1]})` + ' ' + accumulator
+            return accumulator;
+        }, '');
+        console.log(result);
     } 
 }
 
@@ -155,10 +160,10 @@ rl.print();
 // Should display: [1, 3) [19, 21)
 rl.remove([-30, 20]);
 rl.print();
-
+// Should display: [20, 21)
 rl.add([-30, 10]);
 rl.print();
-// Should display: [1, 8) [10, 21)
-
+// Should display: [-30, 10), [20, 21)
 rl.remove([-30, 20]);
 rl.print();
+// Should display: [20, 21)
